@@ -1,3 +1,4 @@
+/* Divisão do ecrã em 12 colunas */
 .context {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -66,4 +67,33 @@
 .col12 {
     grid-area: col12;
     border: solid 2px #000;
+}
+
+/* Ocupa as colunas 2, 3 e 4 */
+.col-3-6 {
+    grid-column: col3 / col6;
+    padding: 20px;
+}
+
+.col-3-6 .content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-7-10 {
+    grid-column: col7 / col10;
+    padding: 20px;
+}
+
+.col-7-10 .content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagem ocupar 100% da largura da coluna, com margem de 20px e borda de 10px */
+.img-designers {
+    width: 100%;
+    height: auto;
+    border: 10px solid #000;
+    border-radius: 20px;
 }

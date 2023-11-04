@@ -1,7 +1,7 @@
 import React from 'react';
 import '../pages/Designers.css';
 
-function DesignerInfo({ imageSrc, name, description, index }) {
+function DesignerInfo({ designer, index }) {
   const isEven = index % 2 === 0;
 
   return (
@@ -9,11 +9,11 @@ function DesignerInfo({ imageSrc, name, description, index }) {
       <div className="col-3-6">
         <div className="content-wrapper">
           {isEven ? (
-            <img src={imageSrc} alt={name} className="img-designers" />
+            <img src={designer.imageSrc} alt={designer.name} className="img-designers" />
           ) : (
             <>
-              <h2>{name}</h2>
-              <p>{description}</p>
+              <h2>{designer.name}</h2>
+              <p>{designer.description}</p>
             </>
           )}
         </div>
@@ -22,11 +22,11 @@ function DesignerInfo({ imageSrc, name, description, index }) {
         <div className="content-wrapper">
           {isEven ? (
             <>
-              <h2>{name}</h2>
-              <p>{description}</p>
+              <h2>{designer.name}</h2>
+              <p>{designer.description}</p>
             </>
           ) : (
-            <img src={imageSrc} alt={name} className="img-designers" />
+            <img src={designer.imageSrc} alt={designer.name} className="img-designers" />
           )}
         </div>
       </div>

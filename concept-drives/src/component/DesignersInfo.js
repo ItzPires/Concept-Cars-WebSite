@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../pages/Designers.css';
 
 function DesignerInfo({ designer, index }) {
   const isEven = index % 2 === 0;
+  const [isMobile, setIsMobile] = useState(false);
 
   const returnImage = (
     <>
@@ -20,17 +21,37 @@ function DesignerInfo({ designer, index }) {
   );
 
   const renderContent = (first) => {
-    if (isEven && first) {
+    if (isMobile && first)
       return returnImage;
-    } else if (isEven) {
+    else if (isMobile)
       return returnText;
-    }
-    else if (first) {
-      return returnText;
-    } else {
+    else if (isEven && first)
       return returnImage;
-    }
+    else if (isEven)
+      return returnText;
+    else if (first)
+      return returnText;
+    else
+      return returnImage;
   };
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    checkIfMobile();
+
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
   return (
     <div className="context">

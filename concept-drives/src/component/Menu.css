@@ -1,0 +1,36 @@
+.Menu {
+  position: relative;
+  width: 600px;
+  height: 100%;
+  background-color: #2c2c34;
+  display: flex;
+  flex-direction: column;
+}
+
+.MenuIconButton {
+  position: absolute;
+  padding: 65px 55px 0px 0px;
+  align-self: flex-end;
+}
+
+.Bottons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 240px;
+    padding-bottom: 240px;
+    height: 100%;
+    
+}
+
+button{
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Franklin Gothic Medium;
+    font-style: regular;
+    font-weight: normal;
+    font-size: 64px;
+    color: #F8F8F8;
+}

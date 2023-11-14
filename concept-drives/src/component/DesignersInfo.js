@@ -14,8 +14,8 @@ function DesignerInfo({ designer, index }) {
   const returnText = (
     <>
       <div>
-        <h2>{designer.name}</h2>
-        <p>{designer.description}</p>
+        <h2 className="name-designers">{designer.name}</h2>
+        <p className="description-designers">{designer.description}</p>
       </div>
     </>
   );

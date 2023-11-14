@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar setMenuOpen={setMenuOpen} />
       <Drawer anchor="right" open={menuOpen} onClose={() => setMenuOpen(false)}>
         <Menu setMenuOpen={setMenuOpen} />
       </Drawer>
@@ -19,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/designers" element={<Designers />} />
+          <Route path="/admin" element={<Designers />} />
         </Routes>
       </BrowserRouter>
     </div>

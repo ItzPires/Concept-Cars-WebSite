@@ -1,16 +1,16 @@
 /* Divisão do ecrã em 12 colunas */
 .context {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-        "col1 col2 col3 col4 col5 col6 col7 col8 col9 col10 col11 col12";
-    margin: 50px;
+        "col1 col2";
+    margin: 5% 15%;
     grid-gap: 20px;
 }
 
 /* Ocupa as colunas 2, 3 e 4 */
 .col-3-6 {
-    grid-column: col3 / col6;
+    grid-column: col1;
     padding: 20px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .col-7-10 {
-    grid-column: col7 / col10;
+    grid-column: col2;
     padding: 20px;
 }
 
@@ -29,33 +29,76 @@
     flex-direction: column;
 }
 
-/* Estilos para dispositivos móveis (largura menor que 768px, por exemplo) */
-@media (max-width: 768px) {
-    /* Redefina a exibição da grade para uma única coluna */
-    .context {
-      grid-template-columns: 1fr; /* Uma única coluna que ocupa toda a largura */
-      grid-template-areas: "col1";
-      grid-gap: 10px; /* Ajuste o espaço entre as células para dispositivos móveis */
-    }
-  
-    /* Redefina as colunas para ocupar toda a largura da tela */
-    .col-3-6,
-    .col-7-10 {
-      grid-column: col1; /* Coluna única que ocupa toda a largura */
-    }
-  
-    /* Remova estilos flexbox de .content-wrapper para dispositivos móveis, se necessário */
-    .col-3-6 .content-wrapper,
-    .col-7-10 .content-wrapper {
-      display: block; /* Volte ao padrão de bloco para dispositivos móveis */
-    }
-  }
-  
-
 /* Imagem ocupar 100% da largura da coluna, com margem de 20px e borda de 10px */
 .img-designers {
     width: 100%;
     height: auto;
-    border: 10px solid #000;
+    border: 4px solid #2c2c34;
     border-radius: 20px;
+}
+
+.name-designers {
+    font-family: Franklin Gothic Medium;
+    font-style: regular;
+    font-weight: normal;
+    font-size: 40px;
+    margin-block-start: -8px;
+    color: #2c2c34;
+}
+
+.description-designers {
+    font-family: "JosefinSans";
+    font-style: regular;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: justify;
+    color: #41414c;
+}
+
+@media (max-width: 768px) {
+
+    .context {
+        grid-template-columns: 1fr;
+        grid-template-areas: "col1";
+        grid-gap: 0px;
+    }
+
+    .col-3-6,
+    .col-7-10 {
+        grid-column: col1;
+    }
+
+    .col-3-6 {
+        padding: 16px;
+    }
+
+    .col-7-10 {
+        padding: 0px;
+    }
+
+    .col-3-6 .content-wrapper,
+    .col-7-10 .content-wrapper {
+        display: block;
+    }
+
+    .name-designers {
+        font-family: Franklin Gothic Medium;
+        font-style: regular;
+        font-weight: normal;
+        font-size: 24px;
+        color: #2c2c34;
+        text-align: center;
+        margin: 0px;
+        margin-bottom: 4px;
+    }
+
+    .description-designers {
+        font-family: "JosefinSans";
+        font-style: regular;
+        font-weight: normal;
+        font-size: 18px;
+        text-align: center;
+        color: #41414c;
+        margin: 0px;
+    }
 }

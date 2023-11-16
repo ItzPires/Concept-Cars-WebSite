@@ -13,9 +13,9 @@ const Menu = ({setMenuOpen}) => {
                 }}/>
             </div>
             <div className="Bottons">
-                <button>Menu</button>
-                <button>Menu</button>
-                <button>Menu</button>
+                <button>Cars</button>
+                <button>Designers</button>
+                <button>About Us</button>
 
             </div>
             

@@ -4,6 +4,18 @@ import './Menu.css';
 import MenuWhite from '../images/menuWhite.png';
 const Menu = ({setMenuOpen}) => {
 
+    const generateBoxes = (numberOfBoxes) => {
+        const boxes = [];
+        for (let i = 0; i < numberOfBoxes; i++) {
+          const className = i % 2 === 0 ? 'white-box' : 'empty-box';
+          boxes.push(<div key={i} className={className}></div>);
+        }
+        return (
+          <div className="road">
+            {boxes}
+          </div>
+        );
+      }
 
     return(
         <div className='Menu'>
@@ -13,16 +25,14 @@ const Menu = ({setMenuOpen}) => {
                 }}/>
             </div>
             <div className="Bottons">
-                <button>Cars</button>
-                <button>Designers</button>
-                <button>About Us</button>
-
+                <button className="buttonOption">Cars</button>
+                {generateBoxes(7)}
+                <button className="buttonOption">Designers</button>
+                {generateBoxes(7)}
+                <button className="buttonOption">About Us</button>
             </div>
-            
         </div>
-    )
-
-
+    );
 }
 
 export default Menu;

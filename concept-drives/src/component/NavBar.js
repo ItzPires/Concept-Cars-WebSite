@@ -38,7 +38,7 @@ const NavBar = () => {
             </div>
             <Drawer
                 anchor={anchor}
-                open={isMobile || menuOpen}
+                open={menuOpen}
                 onClose={() => setMenuOpen(false)} >
                 <Menu setMenuOpen={setMenuOpen} />
             </Drawer>

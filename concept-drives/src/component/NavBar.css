@@ -11,11 +11,11 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 65px 55px 0px 55px;
+    margin: 50px;
 }
 
 .NavBar-logo{
-    width: 100%;
+    width: 65%;
 }
 
 @media screen and (max-width: 768px) {

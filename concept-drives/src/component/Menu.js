@@ -2,7 +2,7 @@ import React from "react";
 
 import './Menu.css';
 import MenuWhite from '../images/menuWhite.png';
-const Menu = ({setMenuOpen}) => {
+const Menu = ({ setMenuOpen, isMobile}) => {
 
     const generateBoxes = (numberOfBoxes) => {
         const boxes = [];
@@ -20,15 +20,15 @@ const Menu = ({setMenuOpen}) => {
     return(
         <div className='Menu'>
             <div className="MenuIconButton">
-                <img src={MenuWhite} alt='Menu Icon' className='NavBar-menu-icon' onClick={()=>{
+                <img src={MenuWhite} alt='Menu Icon' className='Menu-menu-icon' onClick={()=>{
                     setMenuOpen(false);
                 }}/>
             </div>
             <div className="Bottons">
                 <button className="buttonOption">Cars</button>
-                {generateBoxes(7)}
+                {!isMobile && generateBoxes(7)}
                 <button className="buttonOption">Designers</button>
-                {generateBoxes(7)}
+                {!isMobile && generateBoxes(7)}
                 <button className="buttonOption">About Us</button>
             </div>
         </div>

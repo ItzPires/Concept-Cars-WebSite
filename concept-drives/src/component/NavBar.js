@@ -23,28 +23,29 @@ const NavBar = () => {
         };
     }, []);
 
-    const anchor = isMobile ? 'bottom' : 'right';
-
     function openMenu() {
         setMenuOpen(true);
     }
 
-    return (
-        <div>
-            <div className='NavBar'>
-                <img src={Title} alt='Concept Drives Logo' className='NavBar-logo' />
-                <img src={MenuIcon} alt='Menu Icon' className='NavBar-menu-icon' onClick={openMenu} />
+    if (!isMobile) {
+        return (
+            <div>
+                <div className='NavBar'>
+                    <img src={Title} alt='Concept Drives Logo' className='NavBar-logo' />
+                    <img src={MenuIcon} alt='Menu Icon' className='NavBar-menu-icon' onClick={openMenu} />
 
+                </div>
+                <Drawer
+                    anchor={"right"}
+                    open={menuOpen}
+                    onClose={() => setMenuOpen(false)} >
+                    <Menu setMenuOpen={setMenuOpen} />
+                </Drawer>
             </div>
-            <Drawer
-                anchor={anchor}
-                open={menuOpen}
-                onClose={() => setMenuOpen(false)} >
-                <Menu setMenuOpen={setMenuOpen} />
-            </Drawer>
-        </div>
-    );
-
+        );
+    } else {
+        return <Menu setMenuOpen={setMenuOpen} isMobile={isMobile} />;
+    }
 
 }
 

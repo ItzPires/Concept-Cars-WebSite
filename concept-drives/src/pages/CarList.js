@@ -13,8 +13,10 @@ const CarList = () => {
 
   const fetchImages = useCallback(async () => {
     const data = await Promise.all(
+    
       itemData.map(async (image) => {
         const img = new Image();
+    
         img.src = image.img;
 
         return new Promise((resolve, reject) => {
@@ -22,9 +24,17 @@ const CarList = () => {
             const aspectRatio = img.naturalWidth / img.naturalHeight;
             console.log(aspectRatio);
 
-            const columns = aspectRatio > 2 ? 2 : 1;
-            const rows = aspectRatio > 1 ? 1 : 2;
+            var columns = aspectRatio > 2 ? 2 : 1;
+            var rows = aspectRatio > 1 ? 1 : 2;
 
+            if (columns === 1 && rows === 1) {
+              // 10% chance of 2x2
+              console.log("Here!");
+              if (Math.random() > 0.8) {
+                columns = 2;
+                rows = 2;
+              }
+            }
             resolve({ src: img.src, loaded: true, aspectRatio, columns, rows });
           };
           img.onerror = () => reject({ ...image, loaded: false });
@@ -32,7 +42,7 @@ const CarList = () => {
       })
     );
     setImageData(data);
-  }, [itemData]);
+  }, []);
 
   useEffect(() => {
     fetchImages();
@@ -52,16 +62,25 @@ const CarList = () => {
           (image, index) => (
             console.log(image),
             (
-              <img
-                key={index}
+              <div
                 className="gallery__item"
-                src={image.src}
-                alt={image.alt}
                 style={{
                   gridRow: `span ${image.rows}`,
                   gridColumn: `span ${image.columns}`,
                 }}
-              />
+                
+              >
+                <img
+                  key={index}
+                  className="gallery__item__img"
+                  src={image.src}
+                  alt={image.alt}
+                />
+
+                <div className="gallery__item__overlay">
+                  <h1 className="gallery__item__title">TITULO</h1>
+                </div>
+              </div>
             )
           )
         )}

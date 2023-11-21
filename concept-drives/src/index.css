@@ -26,3 +26,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2c2c34;
+  border-radius: 6px;
+}
+
+html {
+  scrollbar-color: #2c2c34 transparent;
+  scrollbar-width: thin;
+}
+html {
+  scrollbar-color: #2c2c34 transparent;
+  scrollbar-width: thin;
+}

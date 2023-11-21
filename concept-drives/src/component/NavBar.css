@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 50px;
 }
 
 .NavBar-logo {
@@ -12,5 +11,5 @@
 }
 
 .NavBar-menu-icon {
-    width: 6%;
+    width: 5vw;
 }

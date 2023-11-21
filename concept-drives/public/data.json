@@ -1,0 +1,24 @@
+{
+    "designers": [
+        {
+            "name": "John Doe",
+            "description": "Talentoso designer com uma abordagem inovadora para o design automotivo. Especializado em criar veículos modernos e aerodinâmicos.",
+            "image": "https://static01.nyt.com/images/2012/07/04/business/04Pininfarina1/04Pininfarina1-superJumbo.jpg?quality=75&auto=webp"
+        },
+        {
+            "name": "Jane Smith",
+            "description": "Designer apaixonada por carros clássicos e vintage. Combina o charme do passado com inovações modernas.",
+            "image": "https://static01.nyt.com/images/2012/07/04/business/04Pininfarina1/04Pininfarina1-superJumbo.jpg?quality=75&auto=webp"
+        },
+        {
+            "name": "Sergio Pininfarina",
+            "description": "Renomado designer italiano, conhecido por suas contribuições significativas para o design de carros esportivos e de luxo.",
+            "image": "https://static01.nyt.com/images/2012/07/04/business/04Pininfarina1/04Pininfarina1-superJumbo.jpg?quality=75&auto=webp"
+        },
+        {
+            "name": "Nuccio Bertone",
+            "description": "Designer lendário que deixou um legado duradouro no design automotivo, especialmente em carros conceituais e de produção.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/1967_Fiat_Dino_Nuccio_Bertone.jpg"
+        }
+    ]
+}

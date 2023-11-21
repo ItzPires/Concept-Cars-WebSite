@@ -1,37 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DesignerInfo from '../component/DesignersInfo';
 import Designer from '../class/Designer';
+import Loading from '../component/Loading/Loading';
 import './Designers.css';
 
 const Designers = () => {
-    const designersData = [
-        new Designer(
-            "https://static01.nyt.com/images/2012/07/04/business/04Pininfarina1/04Pininfarina1-superJumbo.jpg?quality=75&auto=webp",
-            "Sergio Pininfarina",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo turpis a enim ullamcorper tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris tincidunt eu risus sed aliquam. In volutpat sed nisi vestibulum"
-        ),
-        new Designer(
-            "https://upload.wikimedia.org/wikipedia/commons/3/39/1967_Fiat_Dino_Nuccio_Bertone.jpg",
-            "Nuccio Bertone",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo turpis a enim ullamcorper tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris tincidunt eu risus sed aliquam. In volutpat sed nisi vestibulum"
-        ),
-        new Designer(
-            "https://static01.nyt.com/images/2012/07/04/business/04Pininfarina1/04Pininfarina1-superJumbo.jpg?quality=75&auto=webp",
-            "Sergio Pininfarina",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo turpis a enim ullamcorper tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris tincidunt eu risus sed aliquam. In volutpat sed nisi vestibulum"
-        ),
-        new Designer(
-            "https://upload.wikimedia.org/wikipedia/commons/3/39/1967_Fiat_Dino_Nuccio_Bertone.jpg",
-            "Nuccio Bertone",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo turpis a enim ullamcorper tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris tincidunt eu risus sed aliquam. In volutpat sed nisi vestibulum"
-        ),
-    ];
+    const [data, setData] = useState(null);
+
+    function timeoutDelay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                await timeoutDelay(500);
+
+                const response = await fetch('./data.json');
+                const dataJson = await response.json();
+
+                const designersData = dataJson.designers.map(designer => {
+                    return new Designer(designer.image, designer.name, designer.description);
+                });
+
+                setData(designersData);
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+            }
+        };
+
+        getData();
+    }, []);
 
     return (
         <div>
-            {designersData.map((designer, index) => (
-                <DesignerInfo key={index} designer={designer} index={index} />
-            ))}
+            {data ? (
+                data.map((designer, index) => (
+                    <DesignerInfo key={index} designer={designer} index={index} />
+                ))
+            ) : (
+                <Loading />
+            )}
         </div>
     );
 };

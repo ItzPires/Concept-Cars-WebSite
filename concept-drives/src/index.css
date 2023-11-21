@@ -1,12 +1,25 @@
+@font-face {
+  font-family: 'FranklinGothic';
+  src: url('./fonts/franklin-gothic-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FranklinGothic';
+  src: url('./fonts/franklin-gothic-heavy.ttf') format('truetype');
+  font-weight: 700;
+  font-style: heavy;
+}
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'FranklinGothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f8f8f8;
-  overflow: auto !important;
 }
 
 code {

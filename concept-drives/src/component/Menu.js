@@ -1,8 +1,10 @@
 import React from "react";
-
+import {Link, useNavigate } from "react-router-dom";
 import './Menu.css';
 import MenuWhite from '../images/menuWhite.png';
 const Menu = ({setMenuOpen}) => {
+    const navigate = useNavigate();
+
 
 
     return(
@@ -13,9 +15,9 @@ const Menu = ({setMenuOpen}) => {
                 }}/>
             </div>
             <div className="Bottons">
-                <button>Menu</button>
-                <button>Menu</button>
-                <button>Menu</button>
+                <button onClick={() => navigate('/cars')}>Cars</button>
+                <button onClick={() => navigate('/designers')}>Designers</button>
+                <button>About us</button>
 
             </div>
             

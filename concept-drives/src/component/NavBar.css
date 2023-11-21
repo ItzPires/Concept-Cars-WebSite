@@ -1,15 +1,6 @@
-h1{
-    font-family: Franklin Gothic Medium;
-    font-style: regular;
-    font-weight: normal;
-    font-size: 124px;
-    border: 1px solid black;
-}
-
 .NavBar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 65px 55px 0px 55px;
 }

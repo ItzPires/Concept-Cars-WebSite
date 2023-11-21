@@ -14,3 +14,9 @@
 .NavBar-menu-icon {
     width: 6%;
 }
+
+@media screen and (max-width: 768px) {
+    .NavBar-logo {
+        width: 100%;
+    }
+}

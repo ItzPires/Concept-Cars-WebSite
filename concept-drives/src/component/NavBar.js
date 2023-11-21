@@ -44,7 +44,13 @@ const NavBar = () => {
             </div>
         );
     } else {
-        return <Menu setMenuOpen={setMenuOpen} isMobile={isMobile} />;
+        return (<div>
+            <div className='NavBar'>
+                <img src={Title} alt='Concept Drives Logo' className='NavBar-logo' />
+            </div>
+            <Menu setMenuOpen={setMenuOpen} isMobile={isMobile} />
+        </div>
+        );
     }
 
 }

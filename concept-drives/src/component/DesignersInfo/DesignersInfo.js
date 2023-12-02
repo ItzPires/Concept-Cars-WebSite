@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../pages/Designers.css';
+import '../../pages/Designers.css';
+import './DesignersInfo.css';
 
 function DesignerInfo({ designer, index }) {
   const isEven = index % 2 === 0;
@@ -13,7 +14,7 @@ function DesignerInfo({ designer, index }) {
 
   const returnText = (
     <>
-      <div>
+      <div className="text-container">
         <h2>{designer.name}</h2>
         <p>{designer.description}</p>
       </div>
@@ -54,14 +55,14 @@ function DesignerInfo({ designer, index }) {
   }, []);
 
   return (
-    <div className="context">
+    <>
       <div className={`col-3-6`}>
         <div className="content-wrapper">{renderContent(true)}</div>
       </div>
       <div className={`col-7-10`}>
         <div className="content-wrapper">{renderContent(false)}</div>
       </div>
-    </div>
+    </>
   );
 }
 

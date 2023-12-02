@@ -1,61 +1,55 @@
 /* Divisão do ecrã em 12 colunas */
 .context {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-areas:
-        "col1 col2 col3 col4 col5 col6 col7 col8 col9 col10 col11 col12";
-    margin: 50px;
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+      "col1 col2 col3 col4 col5 col6 col7 col8 col9 col10 col11 col12";
+  margin-top: 50px;
+  grid-gap: 20px;
 }
 
 /* Ocupa as colunas 2, 3 e 4 */
 .col-3-6 {
-    grid-column: col3 / col6;
-    padding: 20px;
+  grid-column: col3 / col6;
+  padding: 20px;
 }
 
 .col-3-6 .content-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .col-7-10 {
-    grid-column: col7 / col10;
-    padding: 20px;
+  grid-column: col7 / col10;
+  padding: 20px;
 }
 
 .col-7-10 .content-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Estilos para dispositivos móveis (largura menor que 768px, por exemplo) */
-@media (max-width: 768px) {
-    /* Redefina a exibição da grade para uma única coluna */
-    .context {
-      grid-template-columns: 1fr; /* Uma única coluna que ocupa toda a largura */
-      grid-template-areas: "col1";
-      grid-gap: 10px; /* Ajuste o espaço entre as células para dispositivos móveis */
-    }
-  
-    /* Redefina as colunas para ocupar toda a largura da tela */
-    .col-3-6,
-    .col-7-10 {
-      grid-column: col1; /* Coluna única que ocupa toda a largura */
-    }
-  
-    /* Remova estilos flexbox de .content-wrapper para dispositivos móveis, se necessário */
-    .col-3-6 .content-wrapper,
-    .col-7-10 .content-wrapper {
-      display: block; /* Volte ao padrão de bloco para dispositivos móveis */
-    }
-  }
-  
-
-/* Imagem ocupar 100% da largura da coluna, com margem de 20px e borda de 10px */
 .img-designers {
-    width: 100%;
-    height: auto;
-    border: 10px solid #000;
-    border-radius: 20px;
+  width: 100%;
+  height: auto;
+  border: 10px solid #000;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .context {
+    grid-template-columns: 1fr;
+    grid-template-areas: "col1";
+    grid-gap: 10px;
+  }
+
+  .col-3-6,
+  .col-7-10 {
+    grid-column: col1;
+  }
+
+  .col-3-6 .content-wrapper,
+  .col-7-10 .content-wrapper {
+    display: block;
+  }
 }

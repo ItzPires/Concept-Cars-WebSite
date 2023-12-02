@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DesignerInfo from '../component/DesignersInfo';
+import DesignerInfo from '../component/DesignersInfo/DesignersInfo';
 import Designer from '../class/Designer';
 import Loading from '../component/Loading/Loading';
 import './Designers.css';
@@ -16,11 +16,11 @@ const Designers = () => {
             try {
                 await timeoutDelay(500);
 
-                const response = await fetch('./data.json');
+                const response = await fetch('https://conceptdrives.000webhostapp.com/wp-json/wp/v2/Designers');
                 const dataJson = await response.json();
 
-                const designersData = dataJson.designers.map(designer => {
-                    return new Designer(designer.image, designer.name, designer.description);
+                const designersData = dataJson.map(designer => {
+                    return new Designer(designer.acf.image, designer.acf.name, designer.acf.description);
                 });
 
                 setData(designersData);
@@ -33,15 +33,17 @@ const Designers = () => {
     }, []);
 
     return (
-        <div>
+        <>
             {data ? (
-                data.map((designer, index) => (
-                    <DesignerInfo key={index} designer={designer} index={index} />
-                ))
+                <div className="context">
+                    {data.map((designer, index) => (
+                        <DesignerInfo key={index} designer={designer} index={index} />
+                    ))}
+                </div>
             ) : (
                 <Loading />
             )}
-        </div>
+        </>
     );
 };
 

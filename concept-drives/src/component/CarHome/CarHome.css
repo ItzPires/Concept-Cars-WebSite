@@ -1,0 +1,50 @@
+.car-home {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 4px solid black;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+.car-home-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(44, 44, 52, 0.8) 0%,
+    rgba(44, 44, 52, 0.5) 50%,
+    rgba(44, 44, 52, 0.8) 100%
+  );
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-home:hover .car-home-overlay {
+  opacity: 1;
+}
+
+.car-home-foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-home-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f8f8f8;
+  text-align: center;
+  z-index: 3;
+}

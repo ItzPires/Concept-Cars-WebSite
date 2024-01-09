@@ -1,0 +1,120 @@
+.car_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.car_page {
+  padding-top: 45px;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 50px - 45px - 15vh);
+  padding-bottom: 45px;
+}
+
+.car_info {
+  width: 40%;
+  box-sizing: border-box;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  color: 41414C;
+}
+
+.car_detail {
+  color: #41414c;
+  margin-block: 0px;
+}
+
+.car_detail_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c2c34;
+  padding-top: 20px;
+}
+
+.car_carrousel {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right: 25px solid #2c2c34 !important;
+    border-top: 25px solid transparent  !important;
+    border-bottom: 25px solid transparent  !important;
+    opacity: 1 !important;
+}
+
+.carousel .control-next.control-arrow:before {
+    border-left: 25px solid #2c2c34 !important;
+    border-top: 25px solid transparent  !important;
+    border-bottom: 25px solid transparent  !important;
+    opacity: 1 !important;
+}
+
+.carousel-root {
+  width: 100%;
+  height: 100%;
+  border: 10px solid #2c2c34;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-slider {
+  height: 100%;
+}
+
+.slider-wrapper {
+  height: 100%;
+}
+
+.slide div{
+    height: 100%;
+  }
+  
+
+.slide img {
+  height: 100%;
+}
+
+.dot{
+    background-color: #2c2c34 !important;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider {
+  height: 100%;
+  width: 100%;
+}
+
+.car_title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c2c34;
+  margin-block: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .car_page {
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .car_carrousel {
+    width: 100%;
+  }
+
+  .car_info {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 0px;
+  }
+}

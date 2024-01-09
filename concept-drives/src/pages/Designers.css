@@ -1,4 +1,5 @@
 /* Divisão do ecrã em 12 colunas */
+
 .context {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

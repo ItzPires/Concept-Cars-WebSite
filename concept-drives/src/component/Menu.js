@@ -36,7 +36,7 @@ const Menu = ({ setMenuOpen, isMobile }) => {
         {!isMobile && generateBoxes(7)}
         <button className="buttonOption" onClick={() => menuClick('/designers')}>Designers</button>
         {!isMobile && generateBoxes(7)}
-        <button className="buttonOption">About Us</button>
+        <button className="buttonOption" onClick={() => menuClick('/aboutus')}>About Us</button>
       </div>
     </div>
   );

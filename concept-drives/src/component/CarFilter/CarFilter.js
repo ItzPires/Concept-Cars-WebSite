@@ -16,9 +16,12 @@ const CarFilter = ({
   ageFilterValue,
   ageFilter,
   brandFilterList,
+  designerFilterList,
   anchorEl,
   filterBrand,
   setFilterBrand,
+  filterDesigner,
+  setFilterDesigner,
   ageFilterLimits,
   searchQuery,
   setSearchQuery,
@@ -84,6 +87,22 @@ const CarFilter = ({
           s
           renderInput={(params) => (
             <TextField {...params} label="Brand" size="small" />
+          )}
+        />
+
+        <p className="filter_item">Filter by Designer:</p>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={designerFilterList}
+          value={filterDesigner}
+          onChange={(event, newValue) => {
+            console.log(newValue);
+            setFilterDesigner(newValue);
+          }}
+          s
+          renderInput={(params) => (
+            <TextField {...params} label="Designer" size="small" />
           )}
         />
       </Box>

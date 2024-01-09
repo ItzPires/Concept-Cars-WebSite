@@ -5,11 +5,11 @@ import Loading from "../component/Loading/Loading";
 import APIService from "../APIService";
 import "./Designers.css";
 
-const Designers = () => {
+const Designers = ({setLogoHidden}) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-
+        setLogoHidden(false)
         APIService.getDesignerList().then((res) => {
             const designersData = res.objects.map((designer) => {
                 return new Designer(

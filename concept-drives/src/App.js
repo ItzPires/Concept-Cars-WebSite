@@ -1,57 +1,32 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NavBar from './component/NavBar';
-import Designers from './pages/Designers';
+import "./App.css";
+import { BrowserRouter, HashRouter, Route, Routes, Navigate } from "react-router-dom";
+import NavBar from "./component/NavBar";
+import Designers from "./pages/Designers";
 import CarList from "./pages/CarList.js";
+import HomePage from "./pages/HomePage.js";
+import AboutUs from "./pages/AboutUs.js";
 import APIService from "./APIService.js";
-import HomeTitle from './images/hometitle.png';
+import Car from "./pages/Car.js";
 
+function App() {
+  const [logoHidden, setLogoHidden] = useState(false);
 
-function App(){
-    const [initialCar, setInitialCar] = useState([]);
-
-    useEffect(() => {
-      APIService.getInitialCarList().then((res) => {
-        setInitialCar(res.objects);
-      });
-    }, []);
-  
-  
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
+      <HashRouter>
+        
+        <NavBar logoHidden={logoHidden}/>
         <Routes>
-          <Route path="/" element={<CarList />} />
-          <Route path="/designers" element={<Designers />} />
-          <Route path="/cars" element={<CarList />} />
+          <Route path="/" element={<HomePage setLogoHidden={setLogoHidden} />} />
+          <Route path="/designers" element={<Designers setLogoHidden={setLogoHidden}/>} />
+          <Route path="/cars" element={<CarList  setLogoHidden={setLogoHidden}/>} />
+          <Route path="/cars/:id" element={<Car setLogoHidden={setLogoHidden} />} />
+          <Route path="/aboutus" element={<AboutUs setLogoHidden={setLogoHidden} />} />
+          
+          <Route path="*" element={<Navigate to="/" replace state={{ from: 'redirect' }} />} />
         </Routes>
-      </BrowserRouter>
-      <div className="home_gallery">
-      <img src={HomeTitle} alt='Concept Drives Logo' className="homeTitle" />
-      {initialCar.map((car, index) => {
-        return(
-      <div className="home__item" 
-            style={{
-                gridColumnStart: `${car.metadata["grid-columns-start"]}`,
-                gridColumnEnd: `${car.metadata["grid-columns-end"]}`,
-            }}  
-            key={index}>
-
-              <img
-                className="home_foto"
-                src= {car.metadata["images"][0]["imagem"]["url"]}
-                alt={car.title}
-              />
-              <div className="home__item__overlay">
-                <h1 className="home__item__title">{car.title}</h1>
-              </div>
-           </div>
-           
-        );
-      })}
-       </div>
+      </HashRouter>
     </div>
   );
 }

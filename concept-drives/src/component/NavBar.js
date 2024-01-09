@@ -8,7 +8,7 @@ import Menu from "./Menu.js";
 import Drawer from "@mui/material/Drawer";
 import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({logoHidden}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
@@ -36,6 +36,8 @@ const NavBar = () => {
           src={Title}
           alt="Concept Drives Logo"
           className="NavBar-logo"
+            style={logoHidden ? {visibility: "hidden"} : {visibility: "visible"}}
+
           onClick={() => navigate("/")}
         />
         {!isMobile && (

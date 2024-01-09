@@ -9,7 +9,7 @@
   padding-top: 45px;
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 50px - 45px - 15vh);
+  height: calc(100vh - 50px - 45px - 16vh);
   padding-bottom: 45px;
 }
 
@@ -62,7 +62,7 @@
 .carousel-root {
   width: 100%;
   height: 100%;
-  border: 10px solid #2c2c34;
+  border: 4px solid #2c2c34;
   border-radius: 20px;
   overflow: hidden;
 }

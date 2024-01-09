@@ -21,6 +21,7 @@ const APIService = {
         return res.json();
     },
     getCarsList: async () => {
+        console.log("getCarsList")
         const res = await fetch(
             `https://api.cosmicjs.com/v3/buckets/${APIService.getBucketSlug()}/objects?pretty=true&query=%7B%22type%22:%22cars%22%7D&read_key=${APIService.getReadKey()}&depth=1&props=title,metadata,id,`
         )

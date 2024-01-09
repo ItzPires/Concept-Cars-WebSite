@@ -19,6 +19,11 @@ const Menu = ({ setMenuOpen, isMobile }) => {
     );
   }
 
+  const menuClick = (url) => {
+    setMenuOpen(false);
+    navigate(url);
+  }
+
   return (
     <div className='Menu'>
       <div className="MenuIconButton">
@@ -27,9 +32,9 @@ const Menu = ({ setMenuOpen, isMobile }) => {
         }} />
       </div>
       <div className="Bottons">
-        <button className="buttonOption" onClick={() => navigate('/cars')}>Cars</button>
+        <button className="buttonOption" onClick={() => menuClick('/cars')}>Cars</button>
         {!isMobile && generateBoxes(7)}
-        <button className="buttonOption" onClick={() => navigate('/designers')}>Designers</button>
+        <button className="buttonOption" onClick={() => menuClick('/designers')}>Designers</button>
         {!isMobile && generateBoxes(7)}
         <button className="buttonOption">About Us</button>
       </div>

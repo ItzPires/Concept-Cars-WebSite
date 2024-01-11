@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Concept-Cars-WebSite/static/css/main.7722b5b2.css",
+    "main.css": "/Concept-Cars-WebSite/static/css/main.1f002c4f.css",
     "main.js": "/Concept-Cars-WebSite/static/js/main.5fe494c2.js",
     "static/js/787.28e55832.chunk.js": "/Concept-Cars-WebSite/static/js/787.28e55832.chunk.js",
     "static/media/franklin-gothic-heavy.ttf": "/Concept-Cars-WebSite/static/media/franklin-gothic-heavy.367530c1dac1148713d7.ttf",
@@ -8,12 +8,12 @@
     "static/media/hometitle.png": "/Concept-Cars-WebSite/static/media/hometitle.24543ee5b92043c12b6f.png",
     "static/media/title.png": "/Concept-Cars-WebSite/static/media/title.8dc9198807021cfdddc9.png",
     "index.html": "/Concept-Cars-WebSite/index.html",
-    "main.7722b5b2.css.map": "/Concept-Cars-WebSite/static/css/main.7722b5b2.css.map",
+    "main.1f002c4f.css.map": "/Concept-Cars-WebSite/static/css/main.1f002c4f.css.map",
     "main.5fe494c2.js.map": "/Concept-Cars-WebSite/static/js/main.5fe494c2.js.map",
     "787.28e55832.chunk.js.map": "/Concept-Cars-WebSite/static/js/787.28e55832.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7722b5b2.css",
+    "static/css/main.1f002c4f.css",
     "static/js/main.5fe494c2.js"
   ]
 }
